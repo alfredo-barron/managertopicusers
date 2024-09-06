@@ -1,0 +1,9 @@
+GET /documents
+
+POST /documents
+
+{
+  "id": "101",
+  "name": "101.txt",
+  "text": "Mineralogy and Microbial Diversity of the Microbialites in the HypersalineStorr\\'s Lake, the Bahamas. Microbialites found in the low-light-intensity, hypersaline waters of Storr\\'sLake (SL), San Salvador Island, the Bahamas, were investigated with respect totheir morphology, mineralogy, and microbial diversity. Previously describedmicrobialite morphologies, as well as a newly identified \"multi-cuspate\"morphology, were observed at various depths. Electron microscopy analysisrevealed the presence of angular, blocky, and needle-shaped crystals withmineralized cyanobacterial filaments and remains of exopolymeric substances.X-ray diffraction studies confirmed the presence of both Mg-calcite and aragonitein the plateau-mushroom and pinnacle mound microbialites, whereas only Mg-calcitewas identified in the other microbialite morphotypes. A comprehensive molecularanalysis using barcoded pyrosequencing of five different microbial matcommunities identified at least 12 dominant bacterial phyla. Cyanobacteria weregenerally low in abundance and ranged from ∼0.01% in the deeper pinnacle moundsto ∼3.2% in the shallow calcareous knobs. Other photosynthetic members includedgreen nonsulfur bacteria of the phylum Chloroflexi and purple sulfur bacteria of the class Gammaproteobacteria. All mat types contained significant amounts ofsulfate-reducing and dehalogenating bacteria. The low light intensity reachingthe deeper microbialites, the lack of dominant cyanobacteria, and the abundanceof sulfate reducers and Chloroflexi collectively suggest that sulfate reductionand anoxygenic photosynthetic processes influence the carbonate biomineralizationprocess in these systems."
+}

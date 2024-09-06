@@ -1,0 +1,68 @@
+version: '3'
+services:
+    # Identificador de temas
+    semantic:
+        image: alfredobarron/enginesemantic:2
+        restart: always
+        environment:
+           NODE_PORT: 45001
+           NODE_URL: semantic
+           CONSTANTS_PATH: conf/BlogConstants.txt
+           STOP_WORDS_PATH: conf/stopword.txt
+           DATASET_PATH: data/
+           RESULTS_PATH: results/
+           DB_URL: db
+           DB_PORT: 5432
+           DB_NAME: topics
+           DB_USER: postgres
+           DB_PASSWORD: postgres
+        ports:
+            - "45001:45001" 
+        volumes:
+        - ./semantic/conf:/app/conf:rw
+        - ./semantic/data:/app/data:rw
+        - ./semantic/results:/app/results:rw
+
+    # Clasificador de temas
+    classification:
+        image: alfredobarron/engineclassification:1 
+        restart: always
+        environment:
+           NODE_PORT: 45001
+           NODE_URL: classification
+           CONSTANTS_PATH: conf/BlogConstants.txt
+           STOP_WORDS_PATH: conf/stopword.txt
+           DB_URL: db
+           DB_PORT: 5432
+           DB_NAME: topics
+           DB_USER: postgres
+           DB_PASSWORD: postgres
+        ports:
+            - "45002:45001" 
+        volumes:
+        - ./classification/conf:/app/conf:rw
+        
+    # Liderazgo
+    #users:
+    #    image: alfredobarron/java:client
+    #    restart: always
+    #    tty: true
+    #    volumes:
+    #    - ./users:/home/client
+
+    # Base de datos
+    db:
+        image: postgres
+        restart: always
+        environment:
+            POSTGRES_DB: topics
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+        ports:
+            - "5432:5432"   
+        expose:
+            - "5432"
+        volumes:    
+            - ./db/topics.sql:/docker-entrypoint-initdb.d/topics.sql
+
+ 

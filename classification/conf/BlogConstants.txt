@@ -1,0 +1,5 @@
+IP = db;
+PORT = 5432;
+DATABASE = topics;
+USER = postgres;
+PASSWORD = postgres;
